@@ -42,8 +42,6 @@
 
 int main()
 {
-	al_init();
-
 	Engine* engine = new Engine();
 	
 	AllegroDisp* alDisp = new AllegroDisp();
