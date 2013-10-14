@@ -23,8 +23,17 @@ void Engine::MainLoop()
 		//Get first time checkpoint
 		t1 = al_get_time();
 
+		//Clear display
+		display->Clear();
+
+		//Update keyboard
+		kbd->Update();
+
 		//Update content
 		updator->Update();
+
+		//Show backbuffer
+		display->FlipBuffers();
 
 		//Get second time checkpoint
 		t2 = al_get_time();

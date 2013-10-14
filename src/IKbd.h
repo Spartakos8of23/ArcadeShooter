@@ -12,6 +12,7 @@ class IKbd
 {
 	public:
 		virtual ~IKbd();
+		virtual void Update() = 0;
 		virtual bool isKeyPressed(int keycode) = 0;
 		virtual bool onPress(int keycode) = 0;
 		virtual bool onRelease(int keycode) = 0;
