@@ -16,6 +16,7 @@ Engine::~Engine()
 
 void Engine::MainLoop()
 {
+	int fps = 60;
 	double t1, t2, sleepTime;
 
 	while (isRunning)
@@ -38,7 +39,7 @@ void Engine::MainLoop()
 		//Get second time checkpoint
 		t2 = al_get_time();
 
-		sleepTime = t2 - t1;
+		sleepTime = 1000/fps - (t2 - t1);
 
 		if (sleepTime > 0)
 		{
