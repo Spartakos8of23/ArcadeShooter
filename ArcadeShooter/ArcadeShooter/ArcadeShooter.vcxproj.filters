@@ -30,10 +30,23 @@
     <ClCompile Include="..\..\src\AllegroKbd.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+<<<<<<< HEAD
     <ClCompile Include="..\..\src\Updator.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="..\..\src\Spaceship.cpp">
+=======
+    <ClCompile Include="..\..\src\Engine.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\IDisplay.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\IKbd.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\AllegroDisp.cpp">
+>>>>>>> 5ead3f174da66e76483da0ad62662e9bb9dfcc17
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
@@ -50,10 +63,23 @@
     <ClInclude Include="..\..\src\AllegroKbd.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+<<<<<<< HEAD
     <ClInclude Include="..\..\src\Updator.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="..\..\src\Spaceship.h">
+=======
+    <ClInclude Include="..\..\src\Engine.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\AllegroDisp.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\IDisplay.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\IKbd.h">
+>>>>>>> 5ead3f174da66e76483da0ad62662e9bb9dfcc17
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
