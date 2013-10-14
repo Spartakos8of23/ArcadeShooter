@@ -10,7 +10,6 @@ Moveable::~Moveable()
 
 }
 
-//Moves the object depending on the "MoveOrder"
 void Moveable::Move(int MoveOrder)
 {
 	switch(MoveOrder)

@@ -36,7 +36,6 @@ Drawable::~Drawable()
 
 }
 
-//gets the new x and y and updates the coordinates.
 void Drawable::UpdateCoordinates(int x, int y)
 {
 	this->x = x;
