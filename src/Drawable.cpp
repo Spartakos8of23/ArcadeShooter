@@ -78,6 +78,10 @@ int Drawable::GetSpeed()
 	return speed;
 }
 
+void Drawable::Update()
+{
+
+}
 
 
 

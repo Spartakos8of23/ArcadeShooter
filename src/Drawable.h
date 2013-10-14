@@ -44,6 +44,9 @@ class Drawable : GameObject
 
 		//returns the class variable speed
 		int GetSpeed();
+		
+		//
+		void Update();
 };
 
 #endif
