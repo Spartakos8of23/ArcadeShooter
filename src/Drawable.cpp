@@ -7,19 +7,18 @@ Drawable::Drawable()
 	this->length = 0;
 	this->height = 0;
 	this->path = "";
-	this->speed = 1;
+	this->img = NULL;
 	
 	memset(coordinates, 0, 8);
 }
 
-Drawable::Drawable(unsigned int length, unsigned int height, int x, int y, string path, int speed)
+Drawable::Drawable(unsigned int length, unsigned int height, int x, int y, string path)
 {
 	this->x = x;
 	this->y = y;
 	this->length = length;
 	this->height = height;
 	this->path = path;
-	this->speed = speed;
 	
 	this->coordinates[0] = x; //top left corner x
 	this->coordinates[1] = y; // top left corner y
@@ -29,11 +28,13 @@ Drawable::Drawable(unsigned int length, unsigned int height, int x, int y, strin
 	this->coordinates[5] = y; // top right corner y
 	this->coordinates[6] = x + length; // bottom right corner x
 	this->coordinates[7] = y + height; // bottom right corner y
+
+	this->img = al_load_bitmap(path.c_str());
 }
 
 Drawable::~Drawable()
 {
-
+	al_destroy_bitmap(img);
 }
 
 void Drawable::UpdateCoordinates(int x, int y)
@@ -73,14 +74,9 @@ int Drawable::GetY()
 	return y;
 }
 
-int Drawable::GetSpeed()
+void Drawable::Draw()
 {
-	return speed;
-}
-
-void Drawable::Update()
-{
-
+	al_draw_bitmap(img, x, y, 0);
 }
 
 

@@ -16,10 +16,13 @@ enum MoveOrder
 class Moveable : Drawable
 {
 	private:
-		
+		int speed;
 	public:
-		//Constructor default
+		//Constructor . Default speed = 1 .
 		Moveable();
+
+		//Constructor . This constructor initialize all the class (and its father's) variables using the input values . path is the path to the image of this drawable object
+		Moveable(int speed, unsigned int length, unsigned int height, int x, int y, string path);
 
 		//Destructor default
 		~Moveable();

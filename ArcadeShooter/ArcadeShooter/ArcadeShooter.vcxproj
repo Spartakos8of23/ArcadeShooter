@@ -83,12 +83,16 @@
     <ClCompile Include="..\..\src\GameObject.cpp" />
     <ClCompile Include="..\..\src\main.cpp" />
     <ClCompile Include="..\..\src\Moveable.cpp" />
+    <ClCompile Include="..\..\src\Spaceship.cpp" />
+    <ClCompile Include="..\..\src\Updator.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\src\AllegroKbd.h" />
     <ClInclude Include="..\..\src\Drawable.h" />
     <ClInclude Include="..\..\src\GameObject.h" />
     <ClInclude Include="..\..\src\Moveable.h" />
+    <ClInclude Include="..\..\src\Spaceship.h" />
+    <ClInclude Include="..\..\src\Updator.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

@@ -4,25 +4,26 @@
 #include <string.h>
 #include <string>
 #include "GameObject.h"
+#include "allegro5/allegro5.h"
 
 using std::string;
 
 class Drawable : GameObject
 {
 	private:
+		ALLEGRO_BITMAP* img;
 		int coordinates[8];
 		unsigned int length;
 		unsigned int height;
 		int x;
 		int y;
-		int speed;
 		string path;
 	public:
 		//constructor default
 		Drawable();
 
-		//constructor . This constructor initialize all the class variables using the input values .
-		Drawable(unsigned int length, unsigned int height, int x, int y, string path, int speed);
+		//constructor . This constructor initialize all the class variables using the input values . path is the path to the image of this drawable object
+		Drawable(unsigned int length, unsigned int height, int x, int y, string path);
 
 		//destructor
 		~Drawable();
@@ -41,12 +42,9 @@ class Drawable : GameObject
 
 		//returns the class variable y
 		int GetY();
-
-		//returns the class variable speed
-		int GetSpeed();
 		
-		//
-		void Update();
+		//draws the object with al_draw_bitmap function
+		void Draw();
 };
 
 #endif
