@@ -56,7 +56,7 @@
       <Optimization>Disabled</Optimization>
       <SDLCheck>true</SDLCheck>
       <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
-      <PreprocessorDefinitions>_MBCS;%(PreprocessorDefinitions);ALLEGRO_STATICLINK</PreprocessorDefinitions>
+      <PreprocessorDefinitions>_MBCS;%(PreprocessorDefinitions);ALLEGRO_STATICLINK;NULL=0;</PreprocessorDefinitions>
     </ClCompile>
     <Link>
       <GenerateDebugInformation>true</GenerateDebugInformation>
@@ -70,6 +70,7 @@
       <IntrinsicFunctions>true</IntrinsicFunctions>
       <SDLCheck>true</SDLCheck>
       <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
+      <PreprocessorDefinitions>_MBCS;%(PreprocessorDefinitions);ALLEGRO_STATICLINK;NULL=0;</PreprocessorDefinitions>
     </ClCompile>
     <Link>
       <GenerateDebugInformation>true</GenerateDebugInformation>
@@ -78,16 +79,24 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="..\..\src\AllegroDisp.cpp" />
     <ClCompile Include="..\..\src\AllegroKbd.cpp" />
     <ClCompile Include="..\..\src\Drawable.cpp" />
+    <ClCompile Include="..\..\src\Engine.cpp" />
     <ClCompile Include="..\..\src\GameObject.cpp" />
+    <ClCompile Include="..\..\src\IDisplay.cpp" />
+    <ClCompile Include="..\..\src\IKbd.cpp" />
     <ClCompile Include="..\..\src\main.cpp" />
     <ClCompile Include="..\..\src\Moveable.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="..\..\src\AllegroDisp.h" />
     <ClInclude Include="..\..\src\AllegroKbd.h" />
     <ClInclude Include="..\..\src\Drawable.h" />
+    <ClInclude Include="..\..\src\Engine.h" />
     <ClInclude Include="..\..\src\GameObject.h" />
+    <ClInclude Include="..\..\src\IDisplay.h" />
+    <ClInclude Include="..\..\src\IKbd.h" />
     <ClInclude Include="..\..\src\Moveable.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

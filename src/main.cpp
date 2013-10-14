@@ -2,9 +2,9 @@
 #include <string>
 #include <stdlib.h>
 
-#include "allegro5/allegro5.h"
-#include "allegro5/allegro_color.h"
-#include "allegro5/allegro_image.h"
+#include "Engine.h"
+#include "AllegroDisp.h"
+#include "AllegroKbd.h"
 
 #ifdef _MSC_VER
 	//Allegro
@@ -42,5 +42,31 @@
 
 int main()
 {
+	al_init();
+
+	Engine* engine = new Engine();
+	
+	AllegroDisp* alDisp = new AllegroDisp();
+	AllegroKbd* alKbd = new AllegroKbd();
+
+
+	engine->setDisplay(alDisp);
+	engine->setKbd(alKbd);
+
+	alDisp->Init();
+	alKbd->Init();
+
+	//Uncomment these after you add your updator
+	//engine->setUpdator(Updator here...)
+	//engine->MainLoop();
+
+	alKbd->Shutdown();
+	alDisp->Shutdown();
+
+	delete alKbd;
+	delete alDisp;
+
+	delete engine;
+
 	return 0;
 }

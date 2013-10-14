@@ -44,7 +44,6 @@ Icon
 *.log
 *.tlog
 *.idb
-*.pdb
 *.ilk
 *.lastbuildstate
 *..unsuccessfulbuild
@@ -72,3 +71,8 @@ ipch/
 
 # User-specific files
 *.suo
+
+######################
+# My Crap not needed #
+######################
+tmp/
