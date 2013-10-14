@@ -71,6 +71,7 @@ ipch/
 
 # User-specific files
 *.suo
+*.filters
 
 ######################
 # My Crap not needed #
