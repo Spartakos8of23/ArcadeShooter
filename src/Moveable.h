@@ -3,6 +3,7 @@
 
 #include <stdio.h>
 #include "Drawable.h"
+#include "MovementManager.h"
 
 //we need that on function void Move(int MoveOrder);
 enum MoveOrder
@@ -16,6 +17,7 @@ enum MoveOrder
 class Moveable : Drawable
 {
 	private:
+		MovementManager* manager;
 		int speed;
 	public:
 		//Constructor . Default speed = 1 .
@@ -29,6 +31,9 @@ class Moveable : Drawable
 
 		//Moves the object depending on the "MoveOrder"
 		void Move(int MoveOrder);
+		
+		//Updates the Moveable Object
+		void GOUpdate();
 };
 
 #endif

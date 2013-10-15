@@ -79,6 +79,10 @@ void Drawable::Draw()
 	al_draw_bitmap(img, x, y, 0);
 }
 
+void Drawable::GOUpdate()
+{
+	Draw();
+}
 
 
 

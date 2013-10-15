@@ -45,6 +45,9 @@ class Drawable : GameObject
 		
 		//draws the object with al_draw_bitmap function
 		void Draw();
+
+		//Updates the drawable object
+		void GOUpdate();
 };
 
 #endif

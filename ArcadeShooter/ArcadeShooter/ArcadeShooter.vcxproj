@@ -84,10 +84,12 @@
     <ClCompile Include="..\..\src\Drawable.cpp" />
     <ClCompile Include="..\..\src\Engine.cpp" />
     <ClCompile Include="..\..\src\GameObject.cpp" />
+    <ClCompile Include="..\..\src\GameUpdator.cpp" />
     <ClCompile Include="..\..\src\IDisplay.cpp" />
     <ClCompile Include="..\..\src\IKbd.cpp" />
     <ClCompile Include="..\..\src\main.cpp" />
     <ClCompile Include="..\..\src\Moveable.cpp" />
+    <ClCompile Include="..\..\src\MovementManager.cpp" />
     <ClCompile Include="..\..\src\Spaceship.cpp" />
     <ClCompile Include="..\..\src\Updator.cpp" />
   </ItemGroup>
@@ -97,9 +99,11 @@
     <ClInclude Include="..\..\src\Drawable.h" />
     <ClInclude Include="..\..\src\Engine.h" />
     <ClInclude Include="..\..\src\GameObject.h" />
+    <ClInclude Include="..\..\src\GameUpdator.h" />
     <ClInclude Include="..\..\src\IDisplay.h" />
     <ClInclude Include="..\..\src\IKbd.h" />
     <ClInclude Include="..\..\src\Moveable.h" />
+    <ClInclude Include="..\..\src\MovementManager.h" />
     <ClInclude Include="..\..\src\Spaceship.h" />
     <ClInclude Include="..\..\src\Updator.h" />
   </ItemGroup>

@@ -6,6 +6,7 @@ class GameObject
 	private:
 		
 	public:
+		virtual void GOUpdate() = 0;
 };
 
 #endif
