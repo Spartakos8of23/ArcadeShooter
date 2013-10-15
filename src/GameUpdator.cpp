@@ -1,5 +1,7 @@
 #include "GameUpdator.h"
 
+std::vector<GameObject*> GameUpdator::GOvec;
+
 GameUpdator::GameUpdator()
 {
 	
