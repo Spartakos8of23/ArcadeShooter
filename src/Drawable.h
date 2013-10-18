@@ -8,7 +8,7 @@
 
 using std::string;
 
-class Drawable : GameObject
+class Drawable : public GameObject
 {
 	private:
 		ALLEGRO_BITMAP* img;
@@ -17,13 +17,14 @@ class Drawable : GameObject
 		unsigned int height;
 		int x;
 		int y;
+		float angle;
 		string path;
 	public:
 		//constructor default
 		Drawable();
 
 		//constructor . This constructor initialize all the class variables using the input values . path is the path to the image of this drawable object
-		Drawable(unsigned int length, unsigned int height, int x, int y, string path);
+		Drawable(unsigned int length, unsigned int height, int x, int y, string path, float angle);
 
 		//destructor
 		~Drawable();
@@ -37,6 +38,12 @@ class Drawable : GameObject
 		//changes the value of class variable y
 		void SetY(int y);
 
+		//changes the value of class variable angle
+		void SetAngle(float angle);
+
+		//returns the class variable angle
+		float GetAngle();
+
 		//returns the class variable x
 		int GetX();
 
@@ -47,7 +54,7 @@ class Drawable : GameObject
 		void Draw();
 
 		//Updates the drawable object
-		void GOUpdate();
+		void GOUpdate(IKbd* myKbd);
 };
 
 #endif

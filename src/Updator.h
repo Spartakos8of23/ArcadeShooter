@@ -1,6 +1,8 @@
 #ifndef UPDATOR_H
 #define UPDATOR_H
 
+#include "GameObject.h"
+
 class Updator
 {
 	public:

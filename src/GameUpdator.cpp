@@ -4,7 +4,12 @@ std::vector<GameObject*> GameUpdator::GOvec;
 
 GameUpdator::GameUpdator()
 {
-	
+	myKbd = NULL;
+}
+
+GameUpdator::GameUpdator(IKbd* alKbd)
+{
+	myKbd = alKbd;
 }
 
 GameUpdator::~GameUpdator()
@@ -16,7 +21,7 @@ void GameUpdator::Update()
 {
 	for(unsigned int i = 0; i < GOvec.size(); i++)
 	{
-		GOvec[i]->GOUpdate();
+		GOvec[i]->GOUpdate(myKbd);
 	}
 }
 

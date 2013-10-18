@@ -3,7 +3,7 @@
 
 #include "Moveable.h"
 
-class Spaceship : Moveable
+class Spaceship : public Moveable
 {
 	private:
 		unsigned int lives;
@@ -12,7 +12,7 @@ class Spaceship : Moveable
 		Spaceship();
 
 		//Constructor . This constructor initialize all the class (and its father's) variables using the input values . path is the path to the image of this drawable object
-		Spaceship(unsigned int lives, int speed, unsigned int length, unsigned int height, int x, int y, string path);
+		Spaceship(unsigned int lives, int speed, unsigned int length, unsigned int height, int x, int y, string path, float angle);
 
 		//Destructor
 		~Spaceship();

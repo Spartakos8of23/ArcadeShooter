@@ -14,7 +14,7 @@ enum MoveOrder
 	MOVE_DOWN = 4
 };
 
-class Moveable : Drawable
+class Moveable : public Drawable
 {
 	private:
 		MovementManager* manager;
@@ -24,7 +24,7 @@ class Moveable : Drawable
 		Moveable();
 
 		//Constructor . This constructor initialize all the class (and its father's) variables using the input values . path is the path to the image of this drawable object
-		Moveable(int speed, unsigned int length, unsigned int height, int x, int y, string path);
+		Moveable(int speed, unsigned int length, unsigned int height, int x, int y, string path, float angle);
 
 		//Destructor default
 		~Moveable();
@@ -33,7 +33,7 @@ class Moveable : Drawable
 		void Move(int MoveOrder);
 		
 		//Updates the Moveable Object
-		void GOUpdate();
+		void GOUpdate(IKbd* myKbd);
 };
 
 #endif

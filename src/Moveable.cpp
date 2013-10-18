@@ -6,7 +6,7 @@ Moveable::Moveable() : Drawable()
 	manager = new MovementManager();
 }
 
-Moveable::Moveable(int speed, unsigned int length, unsigned int height, int x, int y, string path) : Drawable(length, height, x, y, path)
+Moveable::Moveable(int speed, unsigned int length, unsigned int height, int x, int y, string path, float angle) : Drawable(length, height, x, y, path, angle)
 {
 	this->speed = speed;
 	manager = new MovementManager();
@@ -53,23 +53,26 @@ void Moveable::Move(int MoveOrder)
 	}
 }
 
-void Moveable::GOUpdate()
+void Moveable::GOUpdate(IKbd* myKbd)
 {
 	//Start of Move Part
 	int tempX, tempY;
+	float tempAngle;
 	tempX = Drawable::GetX();
 	tempY = Drawable::GetY();
+	tempAngle = Drawable::GetAngle();
 
-	manager->Move(speed, tempX, tempY);
+	manager->Move(speed, tempX, tempY, tempAngle, myKbd);
 
 	Drawable::SetX(tempX);
 	Drawable::SetY(tempY);
+	Drawable::SetAngle(tempAngle);
 
 	Drawable::UpdateCoordinates(tempX, tempY);
 	//End of Move Part
 
 	//Start of Draw part
-	Drawable::GOUpdate();
+	Drawable::GOUpdate(myKbd);
 	//End of Draw part
 }
 

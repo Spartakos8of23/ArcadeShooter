@@ -19,6 +19,8 @@ void Engine::MainLoop()
 	int fps = 60;
 	double t1, t2, sleepTime;
 
+	isRunning = true;
+
 	while (isRunning)
 	{
 		//Get first time checkpoint

@@ -1,12 +1,17 @@
 #ifndef MOVEMENTMANAGER_H
 #define MOVEMENTMANAGER_H
 
-#include "AllegroKbd.h"
+#define _USE_MATH_DEFINES
+
+#include "IKbd.h"
+#include <allegro5/allegro5.h>
+#include <math.h>
+#include <cmath>
 
 class MovementManager
 {
 	private:
-		AllegroKbd* kbd;
+		
 	public:
 		//Constructor
 		MovementManager();
@@ -15,16 +20,16 @@ class MovementManager
 		~MovementManager();
 
 		//Moves the object. W for up, S for down, A for left, D for right .
-		void Move(int speed, int& x, int& y);
+		void Move(int speed, int& x, int& y, float& angle, IKbd* myKbd);
 		
 		//Returns what key is pressed
-		int KeyPressed();
+		int KeyPressed(IKbd* myKbd);
 		
 		//Returns what key is on press
-		int KeyOnPress();
+		int KeyOnPress(IKbd* myKbd);
 		
 		//Returns what key is on release
-		int KeyOnRelease();
+		int KeyOnRelease(IKbd* myKbd);
 };
 
 #endif

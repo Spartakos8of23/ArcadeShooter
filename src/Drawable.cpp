@@ -8,17 +8,19 @@ Drawable::Drawable()
 	this->height = 0;
 	this->path = "";
 	this->img = NULL;
+	this->angle = 0;
 	
 	memset(coordinates, 0, 8);
 }
 
-Drawable::Drawable(unsigned int length, unsigned int height, int x, int y, string path)
+Drawable::Drawable(unsigned int length, unsigned int height, int x, int y, string path, float angle)
 {
 	this->x = x;
 	this->y = y;
 	this->length = length;
 	this->height = height;
 	this->path = path;
+	this->angle = angle;
 	
 	this->coordinates[0] = x; //top left corner x
 	this->coordinates[1] = y; // top left corner y
@@ -64,6 +66,16 @@ void Drawable::SetY(int y)
 	UpdateCoordinates(x, y);
 }
 
+void Drawable::SetAngle(float angle)
+{
+	this->angle = angle;
+}
+
+float Drawable::GetAngle()
+{
+	return angle;
+}
+
 int Drawable::GetX()
 {
 	return x;
@@ -76,10 +88,11 @@ int Drawable::GetY()
 
 void Drawable::Draw()
 {
-	al_draw_bitmap(img, x, y, 0);
+	//al_draw_rotated_bitmap(img, x+(length)/2, y+(height)/2, x, y, angle, 0);
+	al_draw_rotated_bitmap(img, 0, 0, x, y, angle, 0);
 }
 
-void Drawable::GOUpdate()
+void Drawable::GOUpdate(IKbd* myKbd)
 {
 	Draw();
 }

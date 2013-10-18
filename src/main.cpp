@@ -5,6 +5,9 @@
 #include "Engine.h"
 #include "AllegroDisp.h"
 #include "AllegroKbd.h"
+#include "GameUpdator.h"
+#include "Spaceship.h"
+#include "allegro5/allegro_image.h"
 
 #ifdef _MSC_VER
 	//Allegro
@@ -43,6 +46,7 @@
 int main()
 {
 	al_init();
+	al_init_image_addon();
 
 	Engine* engine = new Engine();
 	
@@ -56,9 +60,16 @@ int main()
 	alDisp->Init();
 	alKbd->Init();
 
-	//Uncomment these after you add your updator
-	//engine->setUpdator(Updator here...)
-	//engine->MainLoop();
+	GameUpdator* updt = new GameUpdator(alKbd);
+
+	GameObject* spaceCow32 = new Spaceship(3, 2, 40, 30, 20, 20, "plane.PNG", 0);
+	updt->Push(spaceCow32);
+
+	engine->setUpdator(updt);
+	engine->MainLoop();
+
+	delete spaceCow32;
+	delete updt;
 
 	alKbd->Shutdown();
 	alDisp->Shutdown();
