@@ -13,7 +13,7 @@ Drawable::Drawable()
 	memset(coordinates, 0, 8);
 }
 
-Drawable::Drawable(unsigned int length, unsigned int height, int x, int y, string path, float angle)
+Drawable::Drawable(float length, float height, float x, float y, string path, float angle)
 {
 	this->x = x;
 	this->y = y;
@@ -39,7 +39,7 @@ Drawable::~Drawable()
 	al_destroy_bitmap(img);
 }
 
-void Drawable::UpdateCoordinates(int x, int y)
+void Drawable::UpdateCoordinates(float x, float y)
 {
 	this->x = x;
 	this->y = y;
@@ -54,13 +54,13 @@ void Drawable::UpdateCoordinates(int x, int y)
 	this->coordinates[7] = y + height; // bottom right corner y
 }
 
-void Drawable::SetX(int x)
+void Drawable::SetX(float x)
 {
 	this->x = x;
 	UpdateCoordinates(x, y);
 }
 
-void Drawable::SetY(int y)
+void Drawable::SetY(float y)
 {
 	this->y = y;
 	UpdateCoordinates(x, y);
@@ -76,20 +76,19 @@ float Drawable::GetAngle()
 	return angle;
 }
 
-int Drawable::GetX()
+float Drawable::GetX()
 {
 	return x;
 }
 
-int Drawable::GetY()
+float Drawable::GetY()
 {
 	return y;
 }
 
 void Drawable::Draw()
 {
-	//al_draw_rotated_bitmap(img, x+(length)/2, y+(height)/2, x, y, angle, 0);
-	al_draw_rotated_bitmap(img, 0, 0, x, y, angle, 0);
+	al_draw_rotated_bitmap(img, length/2, height/2, x, y, angle, 0);
 }
 
 void Drawable::GOUpdate(IKbd* myKbd)

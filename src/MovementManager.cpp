@@ -10,102 +10,30 @@ MovementManager::~MovementManager()
 	
 }
 
-void MovementManager::Move(int speed, int& x, int& y, float& angle, IKbd* myKbd)
+void MovementManager::Move(int speed, float& x, float& y, float& angle, IKbd* myKbd)
 {
-	float t = angle*M_PI/180;
-	//float tt = angle;
-	angle*=M_PI;
-	angle/=180;
+	float pi = M_PI;
 
 	if(KeyPressed(myKbd) == ALLEGRO_KEY_W)
 	{
-		float temp;
+		x+= (cos(angle) * speed);
+		y+= (sin(angle) * speed);
 
-		if(angle == 0)
-		{
-			x+=speed;
-		}
-		else if((t > 0) && (t < M_PI_2))
-		{
-			x+=speed;
-			temp = tan(t);
-			temp*=speed;
-			y-=temp;
-		}
-		else if(angle == M_PI_2)
-		{
-			y-=speed;
-		}
-		else if((angle > M_PI_2) && (angle < M_PI))
-		{
-			
-		}
-		else if(angle == M_PI)
-		{
-			x-=speed;
-		}
-		else if((angle > M_PI) && (angle < 3*M_PI_2))
-		{
-			
-		}
-		else if(angle == 3*M_PI_2)
-		{
-			y+=speed;
-		}
-		else if((angle > 3*M_PI_2) && (angle < 2*M_PI))
-		{
-			
-		}
-		else if(angle == M_PI)
-		{
-			
-		}
-		/*
-		float temp;
-		
-		if((angle!=M_PI) && (angle != 2*M_PI))
-		{
-			if(angle!=0)
-			{
-				x+=speed;
-				temp = tan(angle + M_PI_2);
-				temp*=(FLOAT)speed;
-				y-=temp;
-			}
-			else
-			{
-				x+=speed;
-			}
-			
-		}
-		else if(angle == 2*M_PI)
-		{
-			y-=speed;
-		}
-		else if(angle == M_PI)
-		{
-			y+=speed;
-		}*/
+		//x+=speed;
+		//y+= tan(angle) * speed;
 	}
 	else if(KeyPressed(myKbd) == ALLEGRO_KEY_S)
 	{
-		y+=speed;
-	}
-	else if(KeyPressed(myKbd) == ALLEGRO_KEY_A)
-	{
-		angle = angle + 180/M_PI;
-		if(angle == (M_PI)*2)
-		{
-			angle = 0;
-		}
+		x-= (cos(angle) * speed);
+		y-= (sin(angle) * speed);
 	}
 	else if(KeyPressed(myKbd) == ALLEGRO_KEY_D)
 	{
-		angle = angle + (M_PI)*2 - 0.1;
-		if(angle == (M_PI)*2)
-		{
-			angle = 0;
-		}
+		angle+=0.1;
+	}
+	else if(KeyPressed(myKbd) == ALLEGRO_KEY_A)
+	{
+		angle-=0.1;
 	}
 	else if(KeyPressed(myKbd) == ALLEGRO_KEY_Q)
 	{

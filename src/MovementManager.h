@@ -20,7 +20,7 @@ class MovementManager
 		~MovementManager();
 
 		//Moves the object. W for up, S for down, A for left, D for right .
-		void Move(int speed, int& x, int& y, float& angle, IKbd* myKbd);
+		void Move(int speed, float& x, float& y, float& angle, IKbd* myKbd);
 		
 		//Returns what key is pressed
 		int KeyPressed(IKbd* myKbd);
