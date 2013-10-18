@@ -12,8 +12,6 @@ MovementManager::~MovementManager()
 
 void MovementManager::Move(int speed, float& x, float& y, float& angle, IKbd* myKbd)
 {
-	float pi = M_PI;
-
 	if(KeyPressed(myKbd) == ALLEGRO_KEY_W)
 	{
 		x+= (cos(angle) * speed);
